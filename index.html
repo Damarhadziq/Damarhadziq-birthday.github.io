@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lottie Background</title>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <link rel="stylesheet" href="./src/style/index.css"> <!-- File CSS untuk gaya tambahan (opsional) -->
+</head>
+<body>
+    <div class="container">
+        <div class="animation">
+            <div class="text" id="text">BUKA KEK, DITUNGGUIN JUGA 😠😠</div>
+            <dotlottie-player src="https://lottie.host/9b91673a-516d-44c7-9e05-558047834489/nM4tfiB06z.json" background="transparent" id="animation" onclick="autoPlay()" loading="lazy" speed="1" style="width: 600px; height: 600px; margin: auto;" data-tilt data-tilt-max="50" data-tilt-speed="400" data-tilt-perspective="500"></dotlottie-player>
+            <dotlottie-player src="https://lottie.host/2976abea-1565-482f-9a89-83b669ec863b/6d9CjHeqGS.json" background="transparent" id="animation_2" autoplay loop speed="1" loading="lazy" style="width: 600px; height: 600px; margin: auto;"></dotlottie-player>
+        </div>
+    </div>
+    
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script type="application/javascript" src="./src/script/main.js"></script> -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <!-- tilt -->
+    <script src="./src/script/vanilla-tilt.min.js"></script>
+    <script>
+        function autoPlay() {
+            var animation = document.getElementById("animation");
+            animation.play();
+            setTimeout(function() {
+                window.location.href = "msg.html";
+            }, 2800); 
+        }
+
+        window.addEventListener("load", () => {
+            let msgAnimation = document.getElementById("animation")
+            let agrAnimation = document.getElementById("animation_2")
+            let text = document.getElementById("text")
+
+
+            setTimeout(function() {
+                msgAnimation.style.display = "none"
+                agrAnimation.style.display = "block"
+                text.style.display = "block"
+                console.log("success")
+
+                setTimeout(function() {
+                    msgAnimation.style.display = "block"
+                    agrAnimation.style.display = "none"
+                    text.innerText = "Cepet Bukaa"
+                    console.log("success")
+                }, 5000)
+            }, 5000)
+        })
+    </script>
+</body>
+</html>
